@@ -1,106 +1,112 @@
 using System;
-using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace secondgui
 {
     public partial class Register : Form
     {
+        private OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\PMLS\\source\\repos\\secondgui\\secondgui\\bin\\Debug\\net8.0-windows\\db_users1.mdb");
+        private OleDbCommand cmd = new OleDbCommand();
+
         public Register()
         {
             InitializeComponent();
-        }
-
-        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\PMLS\\source\\repos\\secondgui\\secondgui\\bin\\Debug\\net8.0-windows\\db_users1.mdb");
-        OleDbCommand cmd = new OleDbCommand();
-        OleDbDataAdapter da = new OleDbDataAdapter();
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
         }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
             if (textUsername.Text == "" || textPassword.Text == "" || textcomPassword.Text == "" || studentid.Text == "" || cloudid.Text == "" || department.Text == "")
             {
-                MessageBox.Show("Fields are empty!", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill in all fields!", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else if (textPassword.Text != textcomPassword.Text)
+
+            if (textPassword.Text != textcomPassword.Text)
             {
                 MessageBox.Show("Passwords do not match!", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textPassword.Text = "";
                 textcomPassword.Text = "";
                 textPassword.Focus();
+                return;
             }
-            else if (!IsValidStudentId(studentid.Text))
+
+            if (!IsValidStudentId(studentid.Text))
             {
-                MessageBox.Show("Invalid student ID. The student ID should follow the format: 460**** (e.g 4607895)", "Student ID Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid student ID format. Please enter a valid student ID like 460**** (e.g., 4607895)", "Student ID Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 studentid.Focus();
+                return;
             }
-            else if (!IsValidEmail(cloudid.Text))
+
+            if (!IsValidEmail(cloudid.Text))
             {
-                MessageBox.Show("Invalid cloud ID. The cloud ID should follow the format: LastName460****@cloud.neduet.edu.pk", "CloudID Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid cloud ID format. Please enter a valid cloud ID like LastName460****@cloud.neduet.edu.pk", "CloudID Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cloudid.Focus();
+                return;
             }
-            else if (!IsValidPassword(textPassword.Text))
+
+            if (!IsValidPassword(textPassword.Text))
             {
-                MessageBox.Show("Password does not meet the strength criteria. It should be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Password Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Password does not meet the criteria. It should be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Password Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textPassword.Focus();
+                return;
             }
-            else
+
+            try
             {
-                try
+                if (con.State == System.Data.ConnectionState.Closed)
                 {
-                    if (con.State == System.Data.ConnectionState.Closed)
-                    {
-                        con.Open();
-                    }
-
-                    string register = "INSERT INTO Students ([username], [password], [studentid], [cloudid], [department]) VALUES (@username, @password, @studentid, @cloudid, @department)";
-                    cmd = new OleDbCommand(register, con);
-                    cmd.Parameters.AddWithValue("@username", textUsername.Text);
-                    cmd.Parameters.AddWithValue("@password", textPassword.Text);
-                    cmd.Parameters.AddWithValue("@studentid", studentid.Text);
-                    cmd.Parameters.AddWithValue("@cloudid", cloudid.Text);
-                    cmd.Parameters.AddWithValue("@department", department.Text);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Clear text fields
-                    textUsername.Text = "";
-                    textPassword.Text = "";
-                    textcomPassword.Text = "";
-                    studentid.Text = "";
-                    cloudid.Text = "";
-                    department.Text = "";
+                    con.Open();
                 }
-                catch (Exception ex)
+
+                string registerQuery = "INSERT INTO Students ([StudentName], [Password], [StudentID], [cloudid], [Department]) VALUES (@StudentName, @Password, @StudentID, @cloudid, @Department)";
+                cmd = new OleDbCommand(registerQuery, con);
+                cmd.Parameters.AddWithValue("@StudentName", textUsername.Text);
+                cmd.Parameters.AddWithValue("@Password", textPassword.Text);
+                cmd.Parameters.AddWithValue("@StudentID", studentid.Text);
+                cmd.Parameters.AddWithValue("@cloudid", cloudid.Text);
+                cmd.Parameters.AddWithValue("@Department", department.Text);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Clear text fields
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Ensure the connection is closed
+                if (con.State == System.Data.ConnectionState.Open)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    // Ensure the connection is closed
-                    if (con.State == System.Data.ConnectionState.Open)
-                    {
-                        con.Close();
-                    }
+                    con.Close();
                 }
             }
         }
 
+        private void ClearFields()
+        {
+            textUsername.Text = "";
+            textPassword.Text = "";
+            textcomPassword.Text = "";
+            studentid.Text = "";
+            cloudid.Text = "";
+            department.Text = "";
+            textUsername.Focus();
+        }
+
         private bool IsValidEmail(string email)
         {
-            // Define a regular expression for validating the specific email format
             string emailPattern = @"^[A-Z]+460\d{4}@cloud\.neduet\.edu\.pk$";
             return Regex.IsMatch(email, emailPattern);
         }
 
         private bool IsValidStudentId(string studentId)
         {
-            // Define a regular expression for validating the specific student ID format
             string studentIdPattern = @"^460\d{4}$";
             return Regex.IsMatch(studentId, studentIdPattern);
         }
@@ -113,27 +119,13 @@ namespace secondgui
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            if (showpassword.Checked)
-            {
-                textPassword.PasswordChar = '\0';
-                textcomPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                textPassword.PasswordChar = '*';
-                textcomPassword.PasswordChar = '*';
-            }
+            textPassword.PasswordChar = showpassword.Checked ? '\0' : '*';
+            textcomPassword.PasswordChar = showpassword.Checked ? '\0' : '*';
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textUsername.Text = "";
-            textPassword.Text = "";
-            textcomPassword.Text = "";
-            studentid.Text = "";
-            cloudid.Text = "";
-            department.Text = "";
-            textUsername.Focus();
+            ClearFields();
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -142,8 +134,14 @@ namespace secondgui
             this.Hide();
         }
 
-        private void studentid_TextChanged(object sender, EventArgs e)
+        private void textUsername_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -7,8 +7,8 @@ namespace registration_login_system
 {
     public partial class JobAddForm : Form
     {
-        private string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\PMLS\\source\\repos\\secondgui\\secondgui\\bin\\Debug\\net8.0-windows\\db_users1.mdb";
-
+        private readonly string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\PMLS\\source\\repos\\secondgui\\secondgui\\bin\\Debug\\net8.0-windows\\db_users1.mdb";
+        
         public JobAddForm()
         {
             InitializeComponent();
@@ -17,25 +17,25 @@ namespace registration_login_system
 
         private void LoadAndDisplayAllJobs()
         {
-            var jobListings = LoadAllJobs();
+            List<JobListing> jobListings = LoadAllJobs();
             DisplayResults(jobListings);
         }
 
         private List<JobListing> LoadAllJobs()
         {
-            var jobListings = new List<JobListing>();
+            List<JobListing> jobListings = new List<JobListing>();
 
-            using (var connection = new OleDbConnection(connectionString))
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
-                const string query = "SELECT JobID, Title, Description, Company, Requirements, Type FROM JobListings";
-                using (var command = new OleDbCommand(query, connection))
+                string query = "SELECT JobID, Title, Description, Company, Requirements, Type FROM JobListings";
+                using (OleDbCommand command = new OleDbCommand(query, connection))
                 {
                     connection.Open();
-                    using (var reader = command.ExecuteReader())
+                    using (OleDbDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            var job = new JobListing
+                            JobListing job = new JobListing
                             {
                                 JobID = (int)reader["JobID"],
                                 Title = reader["Title"].ToString(),
@@ -85,8 +85,6 @@ namespace registration_login_system
             return new Random().Next(10000, 99999);
         }
 
-        
-
         private void btnAddJob_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textTitle.Text) ||
@@ -98,13 +96,13 @@ namespace registration_login_system
                 MessageBox.Show("All fields are required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            using (var connection = new OleDbConnection(connectionString))
+            int jobId = GenerateRandomJobId(); // Generate jobId locally
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
-                int jobId = GenerateRandomJobId();
-                const string query = "INSERT INTO JobListings (JobID, Title, Description, Company, Requirements, Type) " +
-                                     "VALUES (@JobID, @Title, @Description, @Company, @Requirements, @Type)";
-                using (var command = new OleDbCommand(query, connection))
+                
+                string query = "INSERT INTO JobListings (JobID, Title, Description, Company, Requirements, Type) " +
+                               "VALUES (@JobID, @Title, @Description, @Company, @Requirements, @Type)";
+                using (OleDbCommand command = new OleDbCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@JobID", jobId);
                     command.Parameters.AddWithValue("@Title", textTitle.Text);
@@ -125,8 +123,23 @@ namespace registration_login_system
                     }
                 }
             }
+            var newJob = new JobListing
+            {
+                JobID = jobId,
+                Title = textTitle.Text,
+                Description = textDescription.Text,
+                Company = textname.Text,
+                Requirements = textRequirements.Text,
+                Type = comboType.Text
+            };
 
-            LoadAndDisplayAllJobs();
+            List<JobListing> jobListings = LoadAllJobs();
+            jobListings.Insert(0, newJob);
+
+            // Reload all jobs and add new job to the top
+            
+
+            DisplayResults(jobListings);
             ClearInputs();
         }
     }

@@ -1,75 +1,79 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using registration_login_system;
+using System;
 using System.Data.OleDb;
-using System.Diagnostics.Eventing.Reader;
-using registration_login_system;
+using System.Windows.Forms;
+
 namespace secondgui
 {
     public partial class LogIn : Form
     {
-        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\PMLS\\source\\repos\\secondgui\\secondgui\\bin\\Debug\\net8.0-windows\\db_users1.mdb");
-        OleDbCommand cmd;
+        private OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\PMLS\\source\\repos\\secondgui\\secondgui\\bin\\Debug\\net8.0-windows\\db_users1.mdb");
+
         public LogIn()
         {
             InitializeComponent();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (con.State != System.Data.ConnectionState.Open)
+            string loginQuery = "SELECT * FROM Students WHERE StudentID = @StudentID AND Password = @Password";
+
+            try
             {
-                con.Open();
+                using (OleDbCommand cmd = new OleDbCommand(loginQuery, con))
+                {
+                    cmd.Parameters.AddWithValue("@StudentID", textUsername.Text);
+                    cmd.Parameters.AddWithValue("@Password", textPassword.Text);
+
+                    con.Open();
+                    using (OleDbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            // Successful login
+                            MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            new JobForm().Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            // Invalid login
+                            MessageBox.Show("Invalid StudentID or Password, Please Try again!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            textPassword.Clear();
+                            textUsername.Focus();
+                        }
+                    }
+                }
             }
-
-            string login = "SELECT * FROM Students WHERE studentid = @studentid AND password = @password";
-            cmd = new OleDbCommand(login, con);
-            cmd.Parameters.AddWithValue("@studentid", textUsername.Text);
-            cmd.Parameters.AddWithValue("@password", textPassword.Text);
-
-            using (OleDbDataReader dr = cmd.ExecuteReader())
+            catch (Exception ex)
             {
-                if (dr.Read())
-                {
-                    new JobForm().Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid StudentID or password, Please Try again!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textUsername.Text = "";
-                    textPassword.Text = "";
-                    textUsername.Focus();
-                }
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            con.Close();
+            finally
+            {
+                con.Close();
+            }
         }
-
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textUsername.Text = "";
-            textPassword.Text = "";
+            // Clear username and password fields
+            textUsername.Clear();
+            textPassword.Clear();
             textUsername.Focus();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
+            // Open registration form
             new Register().Show();
             this.Hide();
         }
 
         private void showpassword_CheckedChanged(object sender, EventArgs e)
         {
-            if (showpassword.Checked)
-            {
-                textPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                textPassword.PasswordChar = '*';
-            }
+            // Show or hide password based on checkbox
+            textPassword.PasswordChar = showpassword.Checked ? '\0' : '*';
         }
 
         private void textUsername_TextChanged(object sender, EventArgs e)

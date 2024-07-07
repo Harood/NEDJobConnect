@@ -38,11 +38,11 @@
             label2 = new Label();
             label1 = new Label();
             panel1 = new Panel();
+            label4 = new Label();
             pictureBox1 = new PictureBox();
             button3 = new Button();
             textPassword = new TextBox();
             showpassword = new CheckBox();
-            label4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -156,6 +156,18 @@
             panel1.Size = new Size(454, 641);
             panel1.TabIndex = 24;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Myanmar Text", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.WhiteSmoke;
+            label4.Location = new Point(127, 321);
+            label4.Name = "label4";
+            label4.Size = new Size(182, 71);
+            label4.TabIndex = 13;
+            label4.Text = "PORTAL";
+            label4.TextAlign = ContentAlignment.TopCenter;
+            // 
             // pictureBox1
             // 
             pictureBox1.BackColor = SystemColors.ControlLight;
@@ -201,18 +213,6 @@
             showpassword.Text = "Show Password";
             showpassword.UseVisualStyleBackColor = false;
             showpassword.CheckedChanged += showpassword_CheckedChanged;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Myanmar Text", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.WhiteSmoke;
-            label4.Location = new Point(127, 321);
-            label4.Name = "label4";
-            label4.Size = new Size(182, 71);
-            label4.TabIndex = 13;
-            label4.Text = "PORTAL";
-            label4.TextAlign = ContentAlignment.TopCenter;
             // 
             // LogIn
             // 

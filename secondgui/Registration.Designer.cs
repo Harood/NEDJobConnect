@@ -150,6 +150,7 @@
             textUsername.Name = "textUsername";
             textUsername.Size = new Size(372, 30);
             textUsername.TabIndex = 27;
+            textUsername.TextChanged += textUsername_TextChanged;
             // 
             // label2
             // 
@@ -202,7 +203,6 @@
             studentid.Name = "studentid";
             studentid.Size = new Size(372, 30);
             studentid.TabIndex = 39;
-            studentid.TextChanged += studentid_TextChanged;
             // 
             // label10
             // 
@@ -330,7 +330,7 @@
             Name = "Register";
             RightToLeftLayout = true;
             Text = "a";
-            Load += Form1_Load_1;
+            Load += Register_Load;
             ResumeLayout(false);
             PerformLayout();
         }

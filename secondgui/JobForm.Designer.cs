@@ -36,7 +36,6 @@
             // 
             // panel1
             // 
-            panel1.AutoSize = true;
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel1.BackColor = SystemColors.Control;
             panel1.BorderStyle = BorderStyle.FixedSingle;
@@ -50,7 +49,7 @@
             panel1.ForeColor = Color.FromArgb(164, 164, 164);
             panel1.Location = new Point(1, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1398, 557);
+            panel1.Size = new Size(1474, 557);
             panel1.TabIndex = 0;
             // 
             // comboBox1
@@ -122,18 +121,18 @@
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.MistyRose;
             dataGridViewCellStyle2.Font = new Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(64, 0, 0);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.RosyBrown;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvResults.DefaultCellStyle = dataGridViewCellStyle2;
             dgvResults.EnableHeadersVisualStyles = false;
-            dgvResults.GridColor = Color.Brown;
+            dgvResults.GridColor = Color.RosyBrown;
             dgvResults.Location = new Point(0, 158);
             dgvResults.Name = "dgvResults";
             dgvResults.ReadOnly = true;
             dgvResults.RowHeadersWidth = 62;
-            dgvResults.Size = new Size(1360, 394);
+            dgvResults.Size = new Size(1469, 394);
             dgvResults.TabIndex = 3;
             dgvResults.CellContentClick += dgvResults_CellContentClick;
             // 
@@ -161,7 +160,7 @@
             panel2.ForeColor = Color.FromArgb(164, 164, 164);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1360, 62);
+            panel2.Size = new Size(1469, 62);
             panel2.TabIndex = 8;
             // 
             // label1
@@ -184,7 +183,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1377, 556);
+            ClientSize = new Size(1472, 556);
             Controls.Add(panel1);
             Name = "JobForm";
             Text = "JobForm";
@@ -194,7 +193,6 @@
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)jobFormBindingSource).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         private Panel panel1;

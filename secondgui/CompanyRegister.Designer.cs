@@ -293,7 +293,7 @@
             Name = "CompanyRegister";
             RightToLeftLayout = true;
             Text = "a";
-            Load += Form1_Load_1;
+            Load += CompanyRegister_Load;
             ResumeLayout(false);
             PerformLayout();
         }
