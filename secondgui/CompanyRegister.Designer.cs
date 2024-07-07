@@ -1,6 +1,6 @@
 ﻿namespace secondgui
 {
-    partial class Register
+    partial class CompanyRegister
     {
         /// <summary>
         ///  Required designer variable.
@@ -39,17 +39,14 @@
             label2 = new Label();
             label1 = new Label();
             label4 = new Label();
-            label8 = new Label();
-            studentid = new TextBox();
             label10 = new Label();
             cloudid = new TextBox();
-            label11 = new Label();
-            label12 = new Label();
-            department = new ComboBox();
             label13 = new Label();
             textcomPassword = new TextBox();
             panel1 = new Panel();
-            label9 = new Label();
+            label11 = new Label();
+            contactno = new TextBox();
+            label7 = new Label();
             SuspendLayout();
             // 
             // label6
@@ -57,7 +54,7 @@
             label6.AutoSize = true;
             label6.Cursor = Cursors.Hand;
             label6.ForeColor = Color.FromArgb(64, 0, 0);
-            label6.Location = new Point(603, 447);
+            label6.Location = new Point(356, 501);
             label6.Name = "label6";
             label6.RightToLeft = RightToLeft.Yes;
             label6.Size = new Size(149, 28);
@@ -69,12 +66,12 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.FromArgb(128, 64, 64);
-            label5.Location = new Point(556, 419);
+            label5.Location = new Point(311, 473);
             label5.Name = "label5";
             label5.RightToLeft = RightToLeft.Yes;
-            label5.Size = new Size(255, 28);
+            label5.Size = new Size(246, 28);
             label5.TabIndex = 33;
-            label5.Text = "?Already have an account";
+            label5.Text = "Already have an account";
             // 
             // button2
             // 
@@ -82,9 +79,9 @@
             button2.Cursor = Cursors.Hand;
             button2.FlatStyle = FlatStyle.Flat;
             button2.ForeColor = Color.Black;
-            button2.Location = new Point(499, 344);
+            button2.Location = new Point(12, 419);
             button2.Name = "button2";
-            button2.Size = new Size(325, 51);
+            button2.Size = new Size(827, 51);
             button2.TabIndex = 32;
             button2.Text = "CLEAR";
             button2.UseVisualStyleBackColor = false;
@@ -97,9 +94,9 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(499, 287);
+            button1.Location = new Point(12, 362);
             button1.Name = "button1";
-            button1.Size = new Size(325, 51);
+            button1.Size = new Size(827, 51);
             button1.TabIndex = 31;
             button1.Text = "REGISTER NOW!";
             button1.UseVisualStyleBackColor = false;
@@ -112,7 +109,7 @@
             showpassword.Cursor = Cursors.Hand;
             showpassword.FlatStyle = FlatStyle.Flat;
             showpassword.ForeColor = Color.FromArgb(128, 64, 64);
-            showpassword.Location = new Point(646, 214);
+            showpassword.Location = new Point(651, 238);
             showpassword.Name = "showpassword";
             showpassword.Size = new Size(178, 32);
             showpassword.TabIndex = 30;
@@ -125,17 +122,17 @@
             textPassword.BackColor = Color.RosyBrown;
             textPassword.BorderStyle = BorderStyle.None;
             textPassword.Font = new Font("MS UI Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textPassword.Location = new Point(499, 97);
+            textPassword.Location = new Point(457, 97);
             textPassword.Name = "textPassword";
             textPassword.PasswordChar = '*';
-            textPassword.Size = new Size(325, 30);
+            textPassword.Size = new Size(372, 30);
             textPassword.TabIndex = 29;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.FromArgb(64, 0, 0);
-            label3.Location = new Point(499, 66);
+            label3.Location = new Point(457, 66);
             label3.Name = "label3";
             label3.Size = new Size(100, 28);
             label3.TabIndex = 28;
@@ -157,9 +154,9 @@
             label2.ForeColor = Color.FromArgb(64, 0, 0);
             label2.Location = new Point(12, 66);
             label2.Name = "label2";
-            label2.Size = new Size(147, 28);
+            label2.Size = new Size(156, 28);
             label2.TabIndex = 26;
-            label2.Text = "Student Name";
+            label2.Text = "CompanyName";
             // 
             // label1
             // 
@@ -169,9 +166,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(481, 40);
+            label1.Size = new Size(431, 40);
             label1.TabIndex = 25;
-            label1.Text = "Student Registration Form";
+            label1.Text = "Register Your Company";
             // 
             // label4
             // 
@@ -179,86 +176,35 @@
             label4.ForeColor = Color.FromArgb(128, 64, 64);
             label4.Location = new Point(12, 130);
             label4.Name = "label4";
-            label4.Size = new Size(122, 28);
+            label4.Size = new Size(242, 28);
             label4.TabIndex = 36;
-            label4.Text = "(Full Name)";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.ForeColor = Color.FromArgb(64, 0, 0);
-            label8.Location = new Point(12, 171);
-            label8.Name = "label8";
-            label8.Size = new Size(112, 28);
-            label8.TabIndex = 38;
-            label8.Text = "Student ID";
-            // 
-            // studentid
-            // 
-            studentid.BackColor = Color.RosyBrown;
-            studentid.BorderStyle = BorderStyle.None;
-            studentid.Font = new Font("MS UI Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            studentid.Location = new Point(12, 202);
-            studentid.Name = "studentid";
-            studentid.Size = new Size(372, 30);
-            studentid.TabIndex = 39;
-            studentid.TextChanged += studentid_TextChanged;
+            label4.Text = "(Full Name of Company)";
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.FromArgb(64, 0, 0);
-            label10.Location = new Point(12, 275);
+            label10.Location = new Point(12, 178);
             label10.Name = "label10";
-            label10.Size = new Size(93, 28);
+            label10.Size = new Size(64, 28);
             label10.TabIndex = 41;
-            label10.Text = "Cloud ID";
+            label10.Text = "Email";
             // 
             // cloudid
             // 
             cloudid.BackColor = Color.RosyBrown;
             cloudid.BorderStyle = BorderStyle.None;
             cloudid.Font = new Font("MS UI Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cloudid.Location = new Point(12, 306);
+            cloudid.Location = new Point(12, 209);
             cloudid.Name = "cloudid";
             cloudid.Size = new Size(372, 30);
             cloudid.TabIndex = 42;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.ForeColor = Color.FromArgb(128, 64, 64);
-            label11.Location = new Point(12, 344);
-            label11.Name = "label11";
-            label11.Size = new Size(372, 28);
-            label11.TabIndex = 43;
-            label11.Text = "(e.g lastnameID@cloudneduet.edu.pk)";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.ForeColor = Color.FromArgb(64, 0, 0);
-            label12.Location = new Point(12, 388);
-            label12.Name = "label12";
-            label12.Size = new Size(127, 28);
-            label12.TabIndex = 44;
-            label12.Text = "Department";
-            // 
-            // department
-            // 
-            department.BackColor = Color.RosyBrown;
-            department.FormattingEnabled = true;
-            department.Items.AddRange(new object[] { "Software Engineering", "CIS department", "CSIT department", "Civil Engineering", "Chemical Engineering", "Electrical Engineeering", "Mechanical Engineeering" });
-            department.Location = new Point(12, 419);
-            department.Name = "department";
-            department.Size = new Size(372, 36);
-            department.TabIndex = 45;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.ForeColor = Color.FromArgb(64, 0, 0);
-            label13.Location = new Point(499, 147);
+            label13.Location = new Point(457, 178);
             label13.Name = "label13";
             label13.Size = new Size(182, 28);
             label13.TabIndex = 46;
@@ -269,10 +215,10 @@
             textcomPassword.BackColor = Color.RosyBrown;
             textcomPassword.BorderStyle = BorderStyle.None;
             textcomPassword.Font = new Font("MS UI Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textcomPassword.Location = new Point(499, 178);
+            textcomPassword.Location = new Point(457, 209);
             textcomPassword.Name = "textcomPassword";
             textcomPassword.PasswordChar = '*';
-            textcomPassword.Size = new Size(325, 30);
+            textcomPassword.Size = new Size(372, 30);
             textcomPassword.TabIndex = 47;
             // 
             // panel1
@@ -283,33 +229,50 @@
             panel1.Size = new Size(899, 63);
             panel1.TabIndex = 48;
             // 
-            // label9
+            // label11
             // 
-            label9.AutoSize = true;
-            label9.ForeColor = Color.FromArgb(128, 64, 64);
-            label9.Location = new Point(12, 235);
-            label9.Name = "label9";
-            label9.Size = new Size(135, 28);
-            label9.TabIndex = 40;
-            label9.Text = "(e.g 460***5)";
+            label11.AutoSize = true;
+            label11.ForeColor = Color.FromArgb(128, 64, 64);
+            label11.Location = new Point(12, 242);
+            label11.Name = "label11";
+            label11.Size = new Size(222, 28);
+            label11.TabIndex = 43;
+            label11.Text = "(e.g abcd@gmail.com)";
             // 
-            // Register
+            // contactno
+            // 
+            contactno.BackColor = Color.RosyBrown;
+            contactno.BorderStyle = BorderStyle.None;
+            contactno.Font = new Font("MS UI Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            contactno.Location = new Point(12, 317);
+            contactno.Name = "contactno";
+            contactno.Size = new Size(372, 30);
+            contactno.TabIndex = 50;
+            contactno.TextChanged += contactno_TextChanged;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.FromArgb(64, 0, 0);
+            label7.Location = new Point(12, 286);
+            label7.Name = "label7";
+            label7.Size = new Size(119, 28);
+            label7.TabIndex = 51;
+            label7.Text = "Contact No";
+            // 
+            // CompanyRegister
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(871, 538);
+            Controls.Add(label7);
+            Controls.Add(contactno);
             Controls.Add(textcomPassword);
             Controls.Add(label13);
-            Controls.Add(department);
-            Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(cloudid);
             Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(studentid);
-            Controls.Add(label8);
             Controls.Add(label4);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -327,7 +290,7 @@
             ForeColor = Color.FromArgb(164, 164, 164);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
-            Name = "Register";
+            Name = "CompanyRegister";
             RightToLeftLayout = true;
             Text = "a";
             Load += Form1_Load_1;
@@ -347,16 +310,13 @@
         private Label label2;
         private Label label1;
         private Label label4;
-        private Label label8;
-        private TextBox studentid;
         private Label label10;
         private TextBox cloudid;
-        private Label label11;
-        private Label label12;
-        private ComboBox department;
         private Label label13;
         private TextBox textcomPassword;
         private Panel panel1;
-        private Label label9;
+        private Label label11;
+        private TextBox contactno;
+        private Label label7;
     }
 }

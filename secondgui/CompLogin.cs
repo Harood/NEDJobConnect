@@ -5,11 +5,11 @@ using System.Diagnostics.Eventing.Reader;
 using registration_login_system;
 namespace secondgui
 {
-    public partial class LogIn : Form
+    public partial class CompLogin : Form
     {
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\PMLS\\source\\repos\\secondgui\\secondgui\\bin\\Debug\\net8.0-windows\\db_users1.mdb");
         OleDbCommand cmd;
-        public LogIn()
+        public CompLogin()
         {
             InitializeComponent();
 
@@ -22,21 +22,21 @@ namespace secondgui
                 con.Open();
             }
 
-            string login = "SELECT * FROM Students WHERE studentid = @studentid AND password = @password";
+            string login = "SELECT * FROM Companies WHERE CompanyID = @CompanyID AND Password = @Password";
             cmd = new OleDbCommand(login, con);
-            cmd.Parameters.AddWithValue("@studentid", textUsername.Text);
-            cmd.Parameters.AddWithValue("@password", textPassword.Text);
+            cmd.Parameters.AddWithValue("@CompanyID", textUsername.Text);
+            cmd.Parameters.AddWithValue("@Password", textPassword.Text);
 
             using (OleDbDataReader dr = cmd.ExecuteReader())
             {
                 if (dr.Read())
                 {
-                    new JobForm().Show();
+                    new JobAddForm().Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Invalid StudentID or password, Please Try again!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid CompanyID or Password, Please Try again!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     textUsername.Text = "";
                     textPassword.Text = "";
                     textUsername.Focus();
@@ -56,7 +56,7 @@ namespace secondgui
 
         private void label6_Click(object sender, EventArgs e)
         {
-            new Register().Show();
+            new CompanyRegister().Show();
             this.Hide();
         }
 
@@ -72,7 +72,7 @@ namespace secondgui
             }
         }
 
-        private void textUsername_TextChanged(object sender, EventArgs e)
+        private void CompLogin_Load(object sender, EventArgs e)
         {
 
         }

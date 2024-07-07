@@ -1,3 +1,5 @@
+using registration_login_system;
+
 namespace secondgui
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace secondgui
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LogIn());
+            Application.Run(new Mainform());
         }
     }
 }
