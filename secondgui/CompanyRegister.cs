@@ -22,7 +22,7 @@ namespace secondgui
         private void button1_Click_2(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textUsername.Text) || string.IsNullOrWhiteSpace(textPassword.Text) || string.IsNullOrWhiteSpace(textcomPassword.Text) ||
-                string.IsNullOrWhiteSpace(cloudid.Text) || string.IsNullOrWhiteSpace(contactno.Text))
+                string.IsNullOrWhiteSpace(cloudid.Text) || string.IsNullOrWhiteSpace(contactno.Text) || string.IsNullOrWhiteSpace(comboBox1.Text))
             {
                 MessageBox.Show("Fields are empty!", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -65,13 +65,14 @@ namespace secondgui
 
                 string companyId = GenerateCompanyId(textUsername.Text);
 
-                string register = "INSERT INTO Companies ([CompanyName], [Password], [CompanyID], [Email], [Contactno]) VALUES (@CompanyName, @Password, @CompanyID, @Email, @Contactno)";
+                string register = "INSERT INTO Companies ([CompanyName], [Password], [CompanyID], [Email], [Contactno], [Industry]) VALUES (@CompanyName, @Password, @CompanyID, @Email, @Contactno, @Industry)";
                 cmd = new OleDbCommand(register, con);
                 cmd.Parameters.AddWithValue("@CompanyName", textUsername.Text);
                 cmd.Parameters.AddWithValue("@Password", textPassword.Text);
                 cmd.Parameters.AddWithValue("@CompanyID", companyId);
                 cmd.Parameters.AddWithValue("@Email", cloudid.Text);
                 cmd.Parameters.AddWithValue("@Contactno", contactno.Text);
+                cmd.Parameters.AddWithValue("@Industry", comboBox1.Text);
 
                 cmd.ExecuteNonQuery();
 
@@ -152,6 +153,7 @@ namespace secondgui
             textcomPassword.Text = "";
             cloudid.Text = "";
             contactno.Text = "";
+            comboBox1.Text = "";
             textUsername.Focus();
         }
 
@@ -165,6 +167,16 @@ namespace secondgui
         private void contactno_TextChanged(object sender, EventArgs e) { }
 
         private void CompanyRegister_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -81,5 +81,21 @@ namespace secondgui
             textPassword.Text = "";
             textUsername.Focus();
         }
+
+        private void textPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            new Mainform().Show();
+            this.Hide();
+        }
     }
 }

@@ -34,5 +34,20 @@ namespace registration_login_system
         {
 
         }
+
+        private void Mainform_Load(object sender, EventArgs e)
+        {
+            // Create an instance of the RoundedPanel
+            RoundedPanel roundedPanel = new RoundedPanel
+            {
+                BorderRadius = 60, // Adjust the roundness
+                Size = new Size(600, 400), // Adjust the size
+                Location = new Point(100, 150), // Adjust the location
+                BackColor = Color.LightBlue // Adjust the background color
+            };
+
+            // Add the custom panel to the form
+            this.Controls.Add(roundedPanel);
+        }
     }
 }

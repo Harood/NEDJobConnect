@@ -86,11 +86,11 @@
             label3.FlatStyle = FlatStyle.System;
             label3.Font = new Font("Arial Rounded MT Bold", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonFace;
-            label3.Location = new Point(10, 13);
+            label3.Location = new Point(454, 13);
             label3.Name = "label3";
-            label3.Size = new Size(357, 37);
+            label3.Size = new Size(347, 37);
             label3.TabIndex = 4;
-            label3.Text = "Job Application Form:";
+            label3.Text = "Job Application Form";
             label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // label1
@@ -112,7 +112,7 @@
             label2.BackColor = SystemColors.Control;
             label2.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Maroon;
-            label2.Location = new Point(12, 103);
+            label2.Location = new Point(11, 40);
             label2.Name = "label2";
             label2.Size = new Size(87, 28);
             label2.TabIndex = 6;
@@ -125,7 +125,7 @@
             label4.BackColor = SystemColors.Control;
             label4.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Maroon;
-            label4.Location = new Point(12, 145);
+            label4.Location = new Point(11, 85);
             label4.Name = "label4";
             label4.Size = new Size(85, 28);
             label4.TabIndex = 7;
@@ -138,7 +138,7 @@
             label5.BackColor = SystemColors.Control;
             label5.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Maroon;
-            label5.Location = new Point(12, 187);
+            label5.Location = new Point(11, 130);
             label5.Name = "label5";
             label5.Size = new Size(130, 28);
             label5.TabIndex = 8;
@@ -151,7 +151,7 @@
             label6.BackColor = SystemColors.Control;
             label6.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Maroon;
-            label6.Location = new Point(12, 230);
+            label6.Location = new Point(12, 173);
             label6.Name = "label6";
             label6.Size = new Size(118, 28);
             label6.TabIndex = 9;
@@ -160,32 +160,33 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(167, 103);
+            txtName.Location = new Point(166, 40);
             txtName.Name = "txtName";
-            txtName.Size = new Size(238, 31);
+            txtName.Size = new Size(395, 31);
             txtName.TabIndex = 10;
             txtName.TextChanged += txtName_TextChanged;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(167, 230);
+            textBox2.Location = new Point(166, 170);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(238, 31);
+            textBox2.Size = new Size(397, 31);
             textBox2.TabIndex = 11;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(167, 184);
+            textBox3.Location = new Point(166, 127);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(238, 31);
+            textBox3.Size = new Size(397, 31);
             textBox3.TabIndex = 12;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(167, 142);
+            txtEmail.Location = new Point(166, 85);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(238, 31);
+            txtEmail.Size = new Size(395, 31);
             txtEmail.TabIndex = 13;
             // 
             // panel1
@@ -193,9 +194,17 @@
             panel1.BackColor = SystemColors.Control;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(11, 62);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txtEmail);
+            panel1.Controls.Add(txtName);
+            panel1.Location = new Point(24, 79);
             panel1.Name = "panel1";
-            panel1.Size = new Size(425, 226);
+            panel1.Size = new Size(606, 226);
             panel1.TabIndex = 14;
             // 
             // panel3
@@ -207,9 +216,9 @@
             panel3.Controls.Add(label18);
             panel3.Controls.Add(label7);
             panel3.Controls.Add(label8);
-            panel3.Location = new Point(451, 304);
+            panel3.Location = new Point(663, 320);
             panel3.Name = "panel3";
-            panel3.Size = new Size(526, 129);
+            panel3.Size = new Size(604, 129);
             panel3.TabIndex = 16;
             // 
             // txtSoftSkills
@@ -217,7 +226,7 @@
             txtSoftSkills.Location = new Point(260, 83);
             txtSoftSkills.Multiline = true;
             txtSoftSkills.Name = "txtSoftSkills";
-            txtSoftSkills.Size = new Size(238, 31);
+            txtSoftSkills.Size = new Size(322, 31);
             txtSoftSkills.TabIndex = 25;
             // 
             // txtTechnicalSkills
@@ -225,7 +234,7 @@
             txtTechnicalSkills.Location = new Point(260, 40);
             txtTechnicalSkills.Multiline = true;
             txtTechnicalSkills.Name = "txtTechnicalSkills";
-            txtTechnicalSkills.Size = new Size(238, 31);
+            txtTechnicalSkills.Size = new Size(322, 31);
             txtTechnicalSkills.TabIndex = 26;
             // 
             // label18
@@ -260,7 +269,7 @@
             label8.BackColor = SystemColors.Control;
             label8.Font = new Font("Arial Rounded MT Bold", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(64, 0, 0);
-            label8.Location = new Point(0, 0);
+            label8.Location = new Point(9, 8);
             label8.Name = "label8";
             label8.Size = new Size(130, 32);
             label8.TabIndex = 5;
@@ -278,16 +287,16 @@
             panel4.Controls.Add(label11);
             panel4.Controls.Add(label10);
             panel4.Controls.Add(label9);
-            panel4.Location = new Point(12, 304);
+            panel4.Location = new Point(25, 320);
             panel4.Name = "panel4";
-            panel4.Size = new Size(424, 274);
+            panel4.Size = new Size(605, 240);
             panel4.TabIndex = 16;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(43, 176);
+            dateTimePicker1.Location = new Point(165, 178);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
+            dateTimePicker1.Size = new Size(363, 31);
             dateTimePicker1.TabIndex = 21;
             // 
             // textBox5
@@ -295,7 +304,7 @@
             textBox5.Location = new Point(165, 87);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(238, 31);
+            textBox5.Size = new Size(363, 31);
             textBox5.TabIndex = 17;
             // 
             // comboBox1
@@ -305,7 +314,7 @@
             comboBox1.Items.AddRange(new object[] { "Bachelors", "Masters" });
             comboBox1.Location = new Point(165, 41);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(238, 33);
+            comboBox1.Size = new Size(363, 33);
             comboBox1.TabIndex = 20;
             // 
             // label12
@@ -373,9 +382,9 @@
             panel5.Controls.Add(label15);
             panel5.Controls.Add(label14);
             panel5.Controls.Add(label13);
-            panel5.Location = new Point(451, 62);
+            panel5.Location = new Point(662, 79);
             panel5.Name = "panel5";
-            panel5.Size = new Size(526, 226);
+            panel5.Size = new Size(604, 226);
             panel5.TabIndex = 17;
             // 
             // textBox9
@@ -383,7 +392,7 @@
             textBox9.Location = new Point(260, 169);
             textBox9.Multiline = true;
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(238, 31);
+            textBox9.Size = new Size(322, 31);
             textBox9.TabIndex = 24;
             // 
             // textBox8
@@ -391,21 +400,21 @@
             textBox8.Location = new Point(260, 126);
             textBox8.Name = "textBox8";
             textBox8.PlaceholderText = "Start Date - End Date";
-            textBox8.Size = new Size(238, 31);
+            textBox8.Size = new Size(322, 31);
             textBox8.TabIndex = 23;
             // 
             // textBox7
             // 
             textBox7.Location = new Point(260, 84);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(238, 31);
+            textBox7.Size = new Size(322, 31);
             textBox7.TabIndex = 22;
             // 
             // textBox6
             // 
             textBox6.Location = new Point(260, 45);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(238, 31);
+            textBox6.Size = new Size(322, 31);
             textBox6.TabIndex = 18;
             // 
             // label17
@@ -484,9 +493,9 @@
             panel2.Controls.Add(label20);
             panel2.Controls.Add(label19);
             panel2.Cursor = Cursors.Hand;
-            panel2.Location = new Point(451, 439);
+            panel2.Location = new Point(662, 464);
             panel2.Name = "panel2";
-            panel2.Size = new Size(525, 138);
+            panel2.Size = new Size(603, 138);
             panel2.TabIndex = 15;
             // 
             // button1
@@ -498,7 +507,7 @@
             button1.ForeColor = SystemColors.ButtonFace;
             button1.Location = new Point(259, 86);
             button1.Name = "button1";
-            button1.Size = new Size(238, 38);
+            button1.Size = new Size(322, 38);
             button1.TabIndex = 30;
             button1.Text = "Upload CV";
             button1.UseVisualStyleBackColor = false;
@@ -521,7 +530,7 @@
             // 
             richTextBox1.Location = new Point(259, 43);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(238, 28);
+            richTextBox1.Size = new Size(322, 28);
             richTextBox1.TabIndex = 28;
             richTextBox1.Text = "";
             // 
@@ -544,7 +553,7 @@
             label19.BackColor = SystemColors.Control;
             label19.Font = new Font("Arial Rounded MT Bold", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label19.ForeColor = Color.FromArgb(64, 0, 0);
-            label19.Location = new Point(0, 0);
+            label19.Location = new Point(3, 8);
             label19.Name = "label19";
             label19.Size = new Size(362, 32);
             label19.TabIndex = 5;
@@ -557,7 +566,7 @@
             panel6.Controls.Add(label3);
             panel6.Location = new Point(2, -4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(983, 60);
+            panel6.Size = new Size(1275, 67);
             panel6.TabIndex = 18;
             // 
             // button2
@@ -567,9 +576,9 @@
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(334, 583);
+            button2.Location = new Point(25, 567);
             button2.Name = "button2";
-            button2.Size = new Size(241, 49);
+            button2.Size = new Size(301, 65);
             button2.TabIndex = 31;
             button2.Text = "Submit Application";
             button2.UseVisualStyleBackColor = false;
@@ -579,20 +588,13 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(984, 635);
+            BackColor = Color.Bisque;
+            ClientSize = new Size(1278, 644);
             Controls.Add(button2);
             Controls.Add(panel2);
             Controls.Add(panel3);
             Controls.Add(panel5);
             Controls.Add(panel4);
-            Controls.Add(txtEmail);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(txtName);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(panel6);
             Name = "ApplicationForm";

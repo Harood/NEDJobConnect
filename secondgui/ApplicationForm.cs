@@ -113,5 +113,10 @@ namespace registration_login_system
             button1.Text = ""; // Clear the displayed file path on the button
             selectedCVFilePath = ""; // Clear the stored file path
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

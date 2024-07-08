@@ -63,6 +63,26 @@ namespace registration_login_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _130850 {
+            get {
+                object obj = ResourceManager.GetObject("130850", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _360_F_338908724_8Tfiyb0T3fd5Onk649ZrLUD9mHudWiJV {
+            get {
+                object obj = ResourceManager.GetObject("360_F_338908724_8Tfiyb0T3fd5Onk649ZrLUD9mHudWiJV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap id_card_line_black_icon_png_309153 {
             get {
                 object obj = ResourceManager.GetObject("id-card-line-black-icon-png_309153", resourceCulture);

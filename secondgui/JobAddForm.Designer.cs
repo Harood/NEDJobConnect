@@ -104,6 +104,7 @@
             // 
             // textDescription
             // 
+            textDescription.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textDescription.Location = new Point(488, 136);
             textDescription.Margin = new Padding(3, 4, 3, 4);
             textDescription.Multiline = true;
@@ -136,6 +137,7 @@
             // 
             // textRequirements
             // 
+            textRequirements.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textRequirements.Location = new Point(943, 136);
             textRequirements.Margin = new Padding(3, 4, 3, 4);
             textRequirements.Multiline = true;
@@ -243,6 +245,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackColor = Color.Bisque;
             ClientSize = new Size(1405, 675);
             Controls.Add(dataGridView1);
             Controls.Add(btnAddJob);
