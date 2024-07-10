@@ -34,21 +34,25 @@ namespace secondgui
 
             if (!IsValidStudentId(studentid.Text))
             {
-                MessageBox.Show("Invalid student ID format. Please enter a valid student ID like 460**** (e.g., 4607895)", "Student ID Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid student ID format. Please enter a valid student ID " +
+                                "like 460**** (e.g., 4607895)", "Student ID Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 studentid.Focus();
                 return;
             }
 
             if (!IsValidEmail(cloudid.Text))
             {
-                MessageBox.Show("Invalid cloud ID format. Please enter a valid cloud ID like LastName460****@cloud.neduet.edu.pk", "CloudID Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid cloud ID format. Please enter a valid cloud ID like " +
+                                "LastName460****@cloud.neduet.edu.pk", "CloudID Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cloudid.Focus();
                 return;
             }
 
             if (!IsValidPassword(textPassword.Text))
             {
-                MessageBox.Show("Password does not meet the criteria. It should be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Password Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Password does not meet the criteria. It should be at least 8 characters long and include at"+
+                                "least one uppercase letter, one lowercase letter, one digit, and one special character.", 
+                                "Password Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textPassword.Focus();
                 return;
             }
@@ -60,7 +64,8 @@ namespace secondgui
                     con.Open();
                 }
 
-                string registerQuery = "INSERT INTO Students ([StudentName], [Password], [StudentID], [cloudid], [Department]) VALUES (@StudentName, @Password, @StudentID, @cloudid, @Department)";
+                string registerQuery = "INSERT INTO Students ([StudentName], [Password], [StudentID], [cloudid], [Department]) " +
+                                       "VALUES (@StudentName, @Password, @StudentID, @cloudid, @Department)";
                 cmd = new OleDbCommand(registerQuery, con);
                 cmd.Parameters.AddWithValue("@StudentName", textUsername.Text);
                 cmd.Parameters.AddWithValue("@Password", textPassword.Text);

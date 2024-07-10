@@ -57,10 +57,19 @@ namespace registration_login_system
             return jobListings;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string searchCriteria = txtSearchCriteria.Text.Trim();
+            string selectedType = comboBox1.SelectedItem.ToString();
+
+            DisplayResults(SearchJobs(searchCriteria, selectedType));
+        }
+
         private List<JobListing> SearchJobs(string criteria, string jobType)
         {
             string query = "SELECT JobID, Title, Description, Requirements, Company, Type FROM JobListings " +
-                           "WHERE (Title LIKE @Criteria OR Description LIKE @Criteria OR Company LIKE @Criteria OR Type LIKE @Criteria OR Requirements LIKE @Criteria) " +
+                           "WHERE (Title LIKE @Criteria OR Description LIKE @Criteria OR Company LIKE @Criteria " +
+                           "OR Type LIKE @Criteria OR Requirements LIKE @Criteria) " +
                            "AND (@JobType = 'All' OR Type = @JobType)";
             var parameterCriteria = new OleDbParameter("@Criteria", "%" + criteria + "%");
             var parameterJobType = new OleDbParameter("@JobType", jobType);
@@ -145,13 +154,7 @@ namespace registration_login_system
             applicationForm.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string searchCriteria = txtSearchCriteria.Text.Trim();
-            string selectedType = comboBox1.SelectedItem.ToString();
-
-            DisplayResults(SearchJobs(searchCriteria, selectedType));
-        }
+        
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
