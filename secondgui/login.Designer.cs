@@ -36,18 +36,19 @@
             label3 = new Label();
             textUsername = new TextBox();
             label2 = new Label();
-            label1 = new Label();
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
             button3 = new Button();
             textPassword = new TextBox();
             showpassword = new CheckBox();
             panel2 = new Panel();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            label7 = new Label();
+            panel1 = new Panel();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label6
@@ -55,8 +56,8 @@
             label6.AutoSize = true;
             label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.FromArgb(64, 0, 0);
-            label6.Location = new Point(228, 606);
+            label6.ForeColor = Color.PeachPuff;
+            label6.Location = new Point(209, 579);
             label6.Name = "label6";
             label6.RightToLeft = RightToLeft.Yes;
             label6.Size = new Size(220, 32);
@@ -68,8 +69,8 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Nirmala UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(128, 64, 64);
-            label5.Location = new Point(180, 559);
+            label5.ForeColor = Color.MistyRose;
+            label5.Location = new Point(160, 541);
             label5.Name = "label5";
             label5.RightToLeft = RightToLeft.Yes;
             label5.Size = new Size(323, 38);
@@ -78,7 +79,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.White;
+            button2.BackColor = Color.MistyRose;
             button2.Cursor = Cursors.Hand;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -93,12 +94,12 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(64, 0, 0);
+            button1.BackColor = Color.MistyRose;
             button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
+            button1.ForeColor = Color.FromArgb(64, 0, 0);
             button1.Location = new Point(148, 380);
             button1.Name = "button1";
             button1.Size = new Size(350, 60);
@@ -111,7 +112,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Nirmala UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(64, 0, 0);
+            label3.ForeColor = Color.PeachPuff;
             label3.Location = new Point(52, 147);
             label3.Name = "label3";
             label3.Size = new Size(147, 38);
@@ -120,7 +121,7 @@
             // 
             // textUsername
             // 
-            textUsername.BackColor = Color.RosyBrown;
+            textUsername.BackColor = Color.MistyRose;
             textUsername.BorderStyle = BorderStyle.None;
             textUsername.Font = new Font("MS UI Gothic", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textUsername.Location = new Point(65, 88);
@@ -133,46 +134,12 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Nirmala UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(64, 0, 0);
+            label2.ForeColor = Color.PeachPuff;
             label2.Location = new Point(52, 33);
             label2.Name = "label2";
             label2.Size = new Size(166, 38);
             label2.TabIndex = 13;
             label2.Text = "Student ID:";
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Myanmar Text", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(0, 316);
-            label1.Name = "label1";
-            label1.Size = new Size(619, 108);
-            label1.TabIndex = 12;
-            label1.Text = "STUDENT LOGIN PORTAL\r\n";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(64, 0, 0);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(-1, 1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(638, 700);
-            panel1.TabIndex = 24;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Bisque;
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(191, 65);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(227, 194);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // button3
             // 
@@ -183,7 +150,7 @@
             // 
             // textPassword
             // 
-            textPassword.BackColor = Color.RosyBrown;
+            textPassword.BackColor = Color.MistyRose;
             textPassword.BorderStyle = BorderStyle.None;
             textPassword.Cursor = Cursors.Hand;
             textPassword.Font = new Font("MS UI Gothic", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -196,14 +163,13 @@
             // showpassword
             // 
             showpassword.AutoSize = true;
-            showpassword.BackColor = Color.Bisque;
+            showpassword.BackColor = Color.FromArgb(64, 0, 0);
             showpassword.Cursor = Cursors.Hand;
-            showpassword.FlatStyle = FlatStyle.Flat;
             showpassword.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            showpassword.ForeColor = Color.FromArgb(128, 64, 64);
+            showpassword.ForeColor = Color.MistyRose;
             showpassword.Location = new Point(360, 257);
             showpassword.Name = "showpassword";
-            showpassword.Size = new Size(211, 36);
+            showpassword.Size = new Size(216, 36);
             showpassword.TabIndex = 31;
             showpassword.Text = "Show Password";
             showpassword.UseVisualStyleBackColor = false;
@@ -211,8 +177,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Bisque;
-            panel2.Controls.Add(pictureBox2);
+            panel2.BackColor = Color.FromArgb(64, 0, 0);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(textPassword);
             panel2.Controls.Add(label2);
@@ -227,18 +192,64 @@
             panel2.Size = new Size(663, 700);
             panel2.TabIndex = 32;
             // 
+            // label1
+            // 
+            label1.Font = new Font("Myanmar Text", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(64, 0, 0);
+            label1.Location = new Point(3, 284);
+            label1.Name = "label1";
+            label1.Size = new Size(619, 108);
+            label1.TabIndex = 12;
+            label1.Text = "STUDENT LOGIN PORTAL\r\n";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.MistyRose;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(191, 65);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(227, 194);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // pictureBox2
             // 
             pictureBox2.BorderStyle = BorderStyle.Fixed3D;
             pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = registration_login_system.Properties.Resources._130850;
-            pictureBox2.Location = new Point(563, 625);
+            pictureBox2.Location = new Point(355, 625);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(86, 62);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 13;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Nirmala UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(64, 0, 0);
+            label7.Location = new Point(436, 640);
+            label7.Name = "label7";
+            label7.Size = new Size(202, 38);
+            label7.TabIndex = 32;
+            label7.Text = "Back to Home";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.MistyRose;
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(-5, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(646, 700);
+            panel1.TabIndex = 24;
             // 
             // LogIn
             // 
@@ -247,19 +258,20 @@
             BackColor = SystemColors.Control;
             BackgroundImage = registration_login_system.Properties.Resources._360_F_338908724_8Tfiyb0T3fd5Onk649ZrLUD9mHudWiJV;
             ClientSize = new Size(1300, 700);
-            Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel2);
             Font = new Font("Nirmala UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ForeColor = Color.FromArgb(255, 192, 128);
             Margin = new Padding(4, 3, 4, 3);
             Name = "LogIn";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Student login";
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -272,14 +284,15 @@
         private Label label3;
         private TextBox textUsername;
         private Label label2;
-        private Label label1;
-        private Panel panel1;
-        private PictureBox pictureBox1;
         private Button button3;
         private TextBox textPassword;
         private CheckBox showpassword;
         private Label label4;
         private Panel panel2;
+        private Label label1;
+        private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Label label7;
+        private Panel panel1;
     }
 }

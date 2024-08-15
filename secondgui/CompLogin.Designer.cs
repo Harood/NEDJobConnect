@@ -224,7 +224,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Bisque;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(1300, 700);
             Controls.Add(pictureBox2);
             Controls.Add(showpassword);

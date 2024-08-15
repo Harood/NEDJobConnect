@@ -95,7 +95,6 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(64, 0, 0);
-            button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.White;

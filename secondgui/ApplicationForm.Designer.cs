@@ -588,7 +588,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Bisque;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(1278, 644);
             Controls.Add(button2);
             Controls.Add(panel2);

@@ -70,7 +70,6 @@
             // 
             panel1.BackColor = Color.FromArgb(64, 0, 0);
             panel1.BorderRadius = 30;
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(0, 0);
@@ -83,7 +82,7 @@
             pictureBox1.BackColor = Color.Bisque;
             pictureBox1.BorderStyle = BorderStyle.Fixed3D;
             pictureBox1.Image = Properties.Resources.NEDUET_logo_svg;
-            pictureBox1.Location = new Point(621, 19);
+            pictureBox1.Location = new Point(636, 381);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(132, 119);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -97,11 +96,11 @@
             label3.BackColor = Color.Bisque;
             label3.Font = new Font("Arial", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Maroon;
-            label3.Location = new Point(133, 194);
+            label3.Location = new Point(111, 209);
             label3.Name = "label3";
-            label3.Size = new Size(512, 32);
+            label3.Size = new Size(517, 32);
             label3.TabIndex = 3;
-            label3.Text = "Are you a Job Seeker or a Recruiter?";
+            label3.Text = "Join Us as a Job Seeker or Recruiter!";
             label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // button1
@@ -111,7 +110,7 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(234, 269);
+            button1.Location = new Point(234, 288);
             button1.Name = "button1";
             button1.Size = new Size(272, 45);
             button1.TabIndex = 5;
@@ -136,16 +135,17 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Bisque;
+            panel2.BackColor = Color.MistyRose;
             panel2.BorderRadius = 30;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(panel1);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(button1);
-            panel2.Location = new Point(272, 73);
+            panel2.Location = new Point(270, 64);
             panel2.Name = "panel2";
-            panel2.Size = new Size(773, 505);
+            panel2.Size = new Size(775, 514);
             panel2.TabIndex = 9;
             // 
             // Mainform
