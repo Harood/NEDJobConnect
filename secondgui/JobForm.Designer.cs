@@ -155,7 +155,7 @@
             btnSearch_Click.Cursor = Cursors.Hand;
             btnSearch_Click.Font = new Font("Nirmala UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch_Click.ForeColor = Color.White;
-            btnSearch_Click.Location = new Point(1023, 65);
+            btnSearch_Click.Location = new Point(1023, 67);
             btnSearch_Click.Name = "btnSearch_Click";
             btnSearch_Click.Size = new Size(143, 43);
             btnSearch_Click.TabIndex = 2;

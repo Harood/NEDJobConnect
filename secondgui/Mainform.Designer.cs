@@ -97,7 +97,7 @@
             label3.BackColor = Color.Bisque;
             label3.Font = new Font("Arial", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Maroon;
-            label3.Location = new Point(133, 194);
+            label3.Location = new Point(137, 198);
             label3.Name = "label3";
             label3.Size = new Size(512, 32);
             label3.TabIndex = 3;

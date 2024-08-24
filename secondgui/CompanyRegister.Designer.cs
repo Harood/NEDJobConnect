@@ -126,7 +126,7 @@
             textPassword.BackColor = Color.RosyBrown;
             textPassword.BorderStyle = BorderStyle.None;
             textPassword.Font = new Font("MS UI Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textPassword.Location = new Point(720, 145);
+            textPassword.Location = new Point(720, 159);
             textPassword.Name = "textPassword";
             textPassword.PasswordChar = '*';
             textPassword.Size = new Size(457, 30);

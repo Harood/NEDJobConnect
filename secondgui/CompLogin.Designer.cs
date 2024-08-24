@@ -120,7 +120,7 @@
             textUsername.BackColor = Color.RosyBrown;
             textUsername.BorderStyle = BorderStyle.None;
             textUsername.Font = new Font("MS UI Gothic", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textUsername.Location = new Point(743, 98);
+            textUsername.Location = new Point(743, 94);
             textUsername.Name = "textUsername";
             textUsername.Size = new Size(464, 40);
             textUsername.TabIndex = 14;

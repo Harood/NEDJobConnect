@@ -389,7 +389,7 @@
             // 
             // textBox9
             // 
-            textBox9.Location = new Point(260, 169);
+            textBox9.Location = new Point(261, 173);
             textBox9.Multiline = true;
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(322, 31);

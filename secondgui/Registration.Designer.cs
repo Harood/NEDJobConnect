@@ -257,7 +257,7 @@
             department.BackColor = Color.RosyBrown;
             department.FormattingEnabled = true;
             department.Items.AddRange(new object[] { "Software Engineering", "CIS department", "CSIT department", "Civil Engineering", "Chemical Engineering", "Electrical Engineeering", "Mechanical Engineeering" });
-            department.Location = new Point(766, 157);
+            department.Location = new Point(766, 161);
             department.Name = "department";
             department.Size = new Size(420, 36);
             department.TabIndex = 45;

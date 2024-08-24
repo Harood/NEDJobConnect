@@ -187,7 +187,7 @@
             textPassword.BorderStyle = BorderStyle.None;
             textPassword.Cursor = Cursors.Hand;
             textPassword.Font = new Font("MS UI Gothic", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textPassword.Location = new Point(65, 202);
+            textPassword.Location = new Point(65, 211);
             textPassword.Name = "textPassword";
             textPassword.PasswordChar = '*';
             textPassword.Size = new Size(506, 40);
